@@ -36,13 +36,14 @@ int main() {
       theory = true;
     }
     
+    // keep the difference
     diff[i] = p[i] - t[i];
   }
   
   if (practice && theory) {
     cout << max << "\n";
   } else if (practice) {
-    // find min diff index
+    // find the min difference index
     int mdi = 0;
     
     for (int i = 1; i < n; ++i) {
@@ -54,7 +55,7 @@ int main() {
     max = max - p[mdi] + t[mdi];
     cout << max << "\n";
   } else {
-    // find max diff index
+    // find the max difference index
     int mdi = 0;
     
     for (int i = 1; i < n; ++i) {
