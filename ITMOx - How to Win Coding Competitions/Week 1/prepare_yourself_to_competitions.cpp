@@ -41,7 +41,7 @@ int main() {
   }
   
   if (practice && theory) {
-    cout << max << "\n";
+    cout << max << '\n';
   } else if (practice) {
     // find the min difference index
     int mdi = 0;
@@ -53,7 +53,7 @@ int main() {
     }
     
     max = max - p[mdi] + t[mdi];
-    cout << max << "\n";
+    cout << max << '\n';
   } else {
     // find the max difference index
     int mdi = 0;
@@ -65,7 +65,7 @@ int main() {
     }
     
     max = max + p[mdi] - t[mdi];
-    cout << max << "\n";
+    cout << max << '\n';
   }
   
   delete [] p;
