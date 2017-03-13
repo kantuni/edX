@@ -10,17 +10,18 @@
 
 #include <string>
 #include <unordered_map>
+#include <algorithm>
 
 int main() {
   int w, h;
   cin >> w >> h;
   
   std::unordered_map<char, std::pair<int, int>> keyboard;
-  for (int i = 0; i < h; ++i) {
-    for (int j = 0; j < w; ++j) {
+  for (int i = 0; i < w; ++i) {
+    for (int j = 0; j < h; ++j) {
       char symbol;
       cin >> symbol;
-      keyboard[symbol] = {j, i};
+      keyboard[symbol] = {i, j};
     }
   }
   
@@ -29,12 +30,16 @@ int main() {
   for (int i = 0; i < 3; ++i) {
     std::string language;
     cin >> language;
-    templates[0].first = language;
+    templates[i].first = language;
     
     std::string code = "";
     while (true) {
       std::string line;
       cin >> line;
+      
+      if (line == "%TEMPLATE-START%") {
+        continue;
+      }
       
       if (line == "%TEMPLATE-END%") {
         break;
@@ -42,11 +47,31 @@ int main() {
       
       code += line;
     }
-    templates[0].second = code;
+    templates[i].second = code;
   }
   
-  cout << "\n\n\n";
-  cout << templates[0].second << "\n";
+  std::string optimal = templates[0].first;
+  int min = INT_MAX;
+  
+  for (auto t : templates) {
+    int total = 0;
+    
+    for (int i = 0; i < t.second.length(); i += 2) {
+      int xa = keyboard[t.second[i]].first;
+      int xb = keyboard[t.second[i + 1]].first;
+      int ya = keyboard[t.second[i]].second;
+      int yb = keyboard[t.second[i + 1]].second;
+      total += std::max(abs(xa - xb), abs(ya - yb));
+    }
+    
+    if (total < min) {
+      min = total;
+      optimal = t.first;
+    }
+  }
+  
+  cout << optimal << "\n";
+  cout << min << "\n";
   
   return 0;
 }
