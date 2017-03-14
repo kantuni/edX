@@ -17,11 +17,11 @@ int main() {
   cin >> w >> h;
   
   std::unordered_map<char, std::pair<int, int>> keyboard;
-  for (int i = 0; i < w; ++i) {
-    for (int j = 0; j < h; ++j) {
+  for (int i = 0; i < h; ++i) {
+    for (int j = 0; j < w; ++j) {
       char symbol;
       cin >> symbol;
-      keyboard[symbol] = {i, j};
+      keyboard[symbol] = {j, i};
     }
   }
   
@@ -56,7 +56,7 @@ int main() {
   for (auto t : templates) {
     int total = 0;
     
-    for (int i = 0; i < t.second.length(); i += 2) {
+    for (int i = 0; i < t.second.length() - 1; ++i) {
       int xa = keyboard[t.second[i]].first;
       int xb = keyboard[t.second[i + 1]].first;
       int ya = keyboard[t.second[i]].second;
