@@ -14,6 +14,24 @@
 
 typedef unsigned long long ull;
 
+ull number_of_divisors(ull n) {
+  ull counter = 0;
+  
+  // min(x, n / x) <= sqrt(n)
+  for (ull j = 1; j <= sqrt(n); ++j) {
+    if (n % j == 0) {
+      if (n / j == j) {
+        // perfect square
+        ++counter;
+      } else {
+        counter += 2;
+      }
+    }
+  }
+  
+  return counter;
+}
+
 int main() {
   ull k;
   cin >> k;
@@ -26,8 +44,9 @@ int main() {
   // sieve of Eratosthenes
   for (ull i = 2; i < sqrt(k + 1); ++i) {
     if (primes[i]) {
-      for (ull j = 2; j * i < k + 1; ++j) {
-        primes[j * i] = false;
+      // j = i^2, i^2 + i, i^2 + 2i, ...
+      for (ull j = 0; i * i + j * i < k + 1; ++j) {
+        primes[i * i + j * i] = false;
       }
     }
   }
@@ -46,22 +65,12 @@ int main() {
   ull max_index = 0;
   
   for (ull i = 2; i < k + 1; ++i) {
-    ull counter = 0;
+    ull counter;
     
     if (primes[i]) {
       counter = 2;
     } else {
-      // min(x, n / x) <= sqrt(n)
-      for (ull j = 1; j <= sqrt(i); ++j) {
-        if (i % j == 0) {
-          if (i / j == j) {
-            // perfect square
-            ++counter;
-          } else {
-            counter += 2;
-          }
-        }
-      }
+      counter = number_of_divisors(i);
     }
     
     if (max < counter) {
