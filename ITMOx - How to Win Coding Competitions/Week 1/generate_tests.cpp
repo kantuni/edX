@@ -82,6 +82,5 @@ int main() {
   }
   
   cout << k - max_index + 1 << "\n";
-  
   return 0;
 }
