@@ -18,9 +18,9 @@ ull number_of_divisors(ull n) {
   ull counter = 0;
   
   // min(x, n / x) <= sqrt(n)
-  for (ull j = 1; j <= sqrt(n); ++j) {
-    if (n % j == 0) {
-      if (n / j == j) {
+  for (ull i = 1; i <= sqrt(n); ++i) {
+    if (n % i == 0) {
+      if (n / i == i) {
         // perfect square
         ++counter;
       } else {
@@ -52,14 +52,9 @@ int main() {
   }
   
   ull *divisors = new ull[k + 1];
+  std::fill_n(divisors, k + 1, 2);
   divisors[0] = 0;
   divisors[1] = 1;
-  
-  for (ull i = 2; i < k + 1; ++i) {
-    if (primes[i]) {
-      divisors[i] = 2;
-    }
-  }
   
   ull max = 0;
   ull max_index = 0;
