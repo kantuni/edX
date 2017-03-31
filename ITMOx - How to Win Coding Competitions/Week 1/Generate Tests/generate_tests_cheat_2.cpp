@@ -27,7 +27,6 @@ int main() {
     4324320, 6486480, 7207200, 8648640
   };
   
-  
   ull max_index = 0;
   for (ull i = 0; i < highly_composite_numbers.size(); ++i) {
     if (highly_composite_numbers[i] > k) {
