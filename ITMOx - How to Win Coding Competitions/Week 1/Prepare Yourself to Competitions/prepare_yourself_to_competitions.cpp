@@ -68,9 +68,9 @@ int main() {
     cout << max << '\n';
   }
   
-  delete [] p;
-  delete [] t;
-  delete [] diff;
+  delete[] p;
+  delete[] t;
+  delete[] diff;
   
   return 0;
 }
