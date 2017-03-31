@@ -42,7 +42,7 @@ int main() {
   // type 0 is preselected
   c[0][0] = 0;
   
-  // others can't be preselected
+  // others can't be preselected (-inf)
   c[0][1] = -1000000;
   c[0][2] = -1000000;
   c[0][3] = -1000000;
