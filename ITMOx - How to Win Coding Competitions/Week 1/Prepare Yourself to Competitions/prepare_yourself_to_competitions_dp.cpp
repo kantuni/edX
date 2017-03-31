@@ -50,7 +50,7 @@ int main() {
   // type 0: can't be selected on other days (-inf)
   // type 1: c[i][1] = p[i] + max(c[i-1][1], c[i-1][0])
   // type 2: c[i][2] = t[i] + max(c[i-1][2], c[i-1][0])
-  // type 3 is a maximum of:
+  // type 3: c[i][3] is a maximum of:
   // - p[i] + c(i - 1) of theory
   // - t[i] + c(i - 1) of practice
   // - max(p[i], t[i]) + c(i - 1) of both
