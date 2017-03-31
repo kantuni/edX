@@ -11,3 +11,6 @@
 6. [Write a Code Template!](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/Write%20a%20Code%20Template) - **Accepted**
 7. [Generate Tests!](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/Generate%20Tests) - **Accepted** (cheat)
 8. [Win the Competition!](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/Win%20the%20Competition) - **Accepted**
+
+### Week 2
+1. [Stack](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%202/Stack) - **Accepted**
