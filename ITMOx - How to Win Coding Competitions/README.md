@@ -1,6 +1,6 @@
 # [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-win-coding-competitions-secrets-itmox-i2cpx-0) by ITMO University
 
-## Problems solved: `8`
+## Problems solved: `9`
 
 ### Week 1
 1. [A + B](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/A%2BB) - **Accepted**
