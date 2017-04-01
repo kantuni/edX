@@ -17,3 +17,4 @@
 2. [Queue](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%202/Queue) - **Accepted**
 3. [Queue with Minimum](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%202/Queue%20with%20Minimum) - **Time limit exceeded**
 4. [Bracket Sequence](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%202/Bracket%20Sequence) - **Accepted**
+5. [Postfix Notation](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%202/Postfix%20Notation) - **Accepted**
