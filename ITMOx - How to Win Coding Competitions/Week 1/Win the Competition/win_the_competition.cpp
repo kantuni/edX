@@ -34,6 +34,5 @@ int main() {
   }
   
   cout << max << "\n";
-  
   return 0;
 }
