@@ -57,7 +57,7 @@ int main() {
       answer += "YES\n";
     } else {
       answer += "NO\n";
-    }   
+    }
   }
   
   cout << answer;
