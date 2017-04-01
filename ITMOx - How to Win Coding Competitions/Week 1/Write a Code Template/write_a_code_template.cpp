@@ -72,6 +72,5 @@ int main() {
   
   cout << optimal << "\n";
   cout << min << "\n";
-  
   return 0;
 }
