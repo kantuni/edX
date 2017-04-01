@@ -40,6 +40,5 @@ int main() {
   }
   
   cout << std::setprecision(17) << maximum << '\n';
-  
   return 0;
 }
