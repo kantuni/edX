@@ -13,8 +13,6 @@
 #include <deque>
 #include <iterator>
 #include <algorithm>
-// std::isnan
-#include <cmath>
 
 typedef long long ll;
 
