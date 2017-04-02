@@ -9,67 +9,77 @@
 #endif
 
 #include <string>
-#include <deque>
+#include <iterator>
+#include <list>
 
 int main() {
   int n;
   cin >> n;
   
-  std::deque<int> q;
-  int mum = 0;
+  std::list<int> l;
+  std::list<int>::iterator start;
+  int cmum = 0;
   
   for (int i = 0; i < n; ++i) {
     std::string cmd;
     cin >> cmd;
     
     if (cmd == "mum!") {
-      ++mum;
+      ++cmum;
       if (i != n - 1) {
         continue;
       }
     }
     
     // process mum! commands in batch
-    if (mum > 0) {
-      if (q.size() % 2 == 0) {
-        if (mum % 2 == 1) {
-          for (int j = 0; j < q.size() / 2; ++j) {
-            q.push_back(q[0]);
-            q.pop_front();
-          }
+    if (cmum > 0 && l.size() > 1) {      
+      int offset = (cmum * (l.size() / 2)) % l.size();
+      while (offset > 0) {
+        ++start;
+        if (start == end(l)) {
+          start = begin(l);
         }
-      } else {
-        int end = mum * (q.size() / 2) % q.size();
-        for (int j = 0; j < end; ++j) {
-          q.push_back(q[0]);
-          q.pop_front();
-        }
+        --offset;
       }
-      
-      // reset mum
-      mum = 0;
     }
+    
+    // reset mum count
+    cmum = 0;
     
     if (cmd == "add") {
       // add the lightsaber
       int x;
       cin >> x;
-      q.push_back(x);
+      if (i == 0 || l.empty()) {
+        l.push_front(x);
+        start = begin(l);
+      } else {
+        l.insert(start, x);
+      }
       continue;
     }
     
     if (cmd == "take") {
       // take the lightsaber
-      q.pop_back();
+      if (l.size() > 1) {
+        l.erase(std::prev(start));
+      } else {
+        l.clear();
+      }
     }
   }
   
-  // print lightsabers
-  cout << q.size() << "\n";
-  for (int i = 0; i < q.size(); ++i) {
-    cout << q[i] << " ";
+  // rearrange and print lightsabers
+  cout << l.size() << "\n";
+  if (l.size() > 0) {
+    for (auto it = start; it != end(l); ++it) {
+      cout << *it << " ";
+    }
+    for (auto it = begin(l); it != start; ++it) {
+      cout << *it << " ";
+    }
+    cout << "\n";
   }
-  cout << "\n";
   
   return 0;
 }
