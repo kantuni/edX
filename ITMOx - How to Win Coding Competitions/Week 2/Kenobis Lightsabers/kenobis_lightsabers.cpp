@@ -32,7 +32,7 @@ int main() {
     }
     
     // process mum! commands in batch
-    if (cmum > 0 && l.size() > 1) {      
+    if (cmum > 0 && l.size() > 1) {
       int offset = (cmum * (l.size() / 2)) % l.size();
       while (offset > 0) {
         ++start;
@@ -50,7 +50,7 @@ int main() {
       // add the lightsaber
       int x;
       cin >> x;
-      if (i == 0 || l.empty()) {
+      if (l.empty()) {
         l.push_front(x);
         start = begin(l);
       } else {
@@ -61,10 +61,10 @@ int main() {
     
     if (cmd == "take") {
       // take the lightsaber
-      if (l.size() > 1) {
-        l.erase(std::prev(start));
+      if (start == begin(l)) {
+        l.pop_back();
       } else {
-        l.clear();
+        l.erase(std::prev(start));
       }
     }
   }
