@@ -32,8 +32,8 @@ int main() {
       // find the min stack
       int min = min_heap.top();
       min_heap.pop();
-      ++min;
-      min_heap.push(min);
+      min_heap.push(++min);
+      
       // number of cups in the biggest stack
       if (min > max) {
         max = min;
