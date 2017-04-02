@@ -33,13 +33,26 @@ int main() {
     
     // process mum! commands in batch
     if (cmum > 0 && l.size() > 1) {
-      int offset = (cmum * (l.size() / 2)) % l.size();
-      while (offset > 0) {
-        ++start;
-        if (start == end(l)) {
-          start = begin(l);
+      if (l.size() % 2 == 0) {
+        if (cmum % 2 == 1) {
+          int offset = l.size() / 2;
+          while (offset > 0) {
+            ++start;
+            if (start == end(l)) {
+              start = begin(l);
+            }
+            --offset;
+          }
         }
-        --offset;
+      } else {
+        int offset = (cmum * (l.size() / 2)) % l.size();
+        while (offset > 0) {
+          ++start;
+          if (start == end(l)) {
+            start = begin(l);
+          }
+          --offset;
+        }
       }
     }
     
