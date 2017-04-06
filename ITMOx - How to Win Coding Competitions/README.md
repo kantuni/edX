@@ -23,4 +23,8 @@
 8. [Kenobi's Lightsabers](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%202/Kenobis%20Lightsabers) - Wrong answer
 
 ### Week 3
-
+1. Sorting
+2. Inversions
+3. Anti-Quicksort
+4. [K-th Ordered Statistic](https://github.com/kantuni/edX/blob/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/kth_ordered_statistic.cpp)
+5. [Drying](https://github.com/kantuni/edX/blob/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/drying.cpp)
