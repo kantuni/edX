@@ -20,6 +20,8 @@ int main() {
     a[i] = A * a[i - 2] + B * a[i - 1] + C;
   }
   
+  // k-th order statistic calculations here
+  
   for (int i = k1 - 1; i < k2; ++i) {
     cout << a[i] << " ";
   }
