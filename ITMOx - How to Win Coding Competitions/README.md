@@ -27,4 +27,4 @@
 2. Inversions
 3. Anti-Quicksort
 4. [K-th Ordered Statistic](https://github.com/kantuni/edX/blob/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/kth_ordered_statistic.cpp)
-5. [Drying](https://github.com/kantuni/edX/blob/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/drying.cpp)
+5. [Drying](https://github.com/kantuni/edX/blob/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/drying.cpp) - Wrong answer
