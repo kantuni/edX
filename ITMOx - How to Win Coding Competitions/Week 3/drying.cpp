@@ -33,14 +33,14 @@ int main() {
   ll minutes = 0;
   while (a.back() != 0) {
     // radiator
-    if (a.back() >= k) {
+    if (a.back() > k) {
       a.back() -= k;
     } else {
       a.back() = 0;
     }
     
-    std::list<ll>::iterator j = begin(a);
     std::list<ll>::iterator last = std::prev(end(a));
+    std::list<ll>::iterator j = begin(a);
     
     // every minute -1
     for (auto it = begin(a); it != last; ++it) {
@@ -57,13 +57,8 @@ int main() {
     if (a.size() > 1) {
       ll tmp = a.back();
       a.pop_back();
-      a.insert(j, tmp);
+      a.insert(std::next(j), tmp);
     }
-    
-    for (auto item: a) {
-      cout << item << " ";
-    }
-    cout << "\n";
     
     ++minutes;
   }
