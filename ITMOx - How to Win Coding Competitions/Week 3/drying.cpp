@@ -8,9 +8,9 @@
   using std::cout;
 #endif
 
-#include <list>
-#include <iterator>
-#include <algorithm>
+#include <vector>
+#include <queue>
+#include <cmath>
 
 typedef long long ll;
 
@@ -18,49 +18,70 @@ int main() {
   int n;
   cin >> n;
   
-  std::list<ll> a;
+  // max heap init
+  std::priority_queue<int> a;
   for (int i = 0; i < n; ++i) {
     ll tmp;
     cin >> tmp;
-    a.push_back(tmp);
+    a.push(tmp);
   }
   
   ll k;
   cin >> k;
   
-  a.sort();
-  
   ll minutes = 0;
-  while (a.back() != 0) {
-    // radiator
-    if (a.back() > k) {
-      a.back() -= k;
-    } else {
-      a.back() = 0;
-    }
+  
+  if (a.size() == 1 && a.top() > k) {
+    minutes = ceil((double) a.top() / k);
+  } else {
+    ll max1 = a.top();
+    a.pop();
+    ll max2 = a.top();
     
-    std::list<ll>::iterator last = std::prev(end(a));
-    std::list<ll>::iterator j = begin(a);
-    
-    // every minute -1
-    for (auto it = begin(a); it != last; ++it) {
-      if (*it >= 1) {
-        --(*it);
+    while (max1 != 0 || max2 != 0) {
+      // m = how many minutes max1 was the max
+      // max1 - k * x >= max2 - 1 * x
+      ll m = ceil((double) (max1 - max2) / (k - 1));
+      
+      // at least 1 minute max1 was the max
+      if (max1 == max2) {
+        m = 1;
       }
-
-      if (*it <= *last) {
-        j = it;
+      
+      minutes += m;
+      
+      // update max1 value, and put it back
+      if (max1 - m * k > 0) {
+        max1 -= m * k;
+      } else {
+        max1 = 0;
+      }
+      a.push(max1);
+      
+      // new max1
+      max1 = a.top();
+      if (max1 > minutes) {
+        max1 -= minutes;
+      } else {
+        max1 = 0;
+      }
+      a.pop();
+      
+      // new max 2
+      max2 = a.top();
+      if (max1 > minutes) {
+        max2 -= minutes;
+      } else {
+        max2 = 0;
       }
     }
     
-    // insert the previous max into the corresponding position
-    if (a.size() > 1) {
-      ll tmp = a.back();
-      a.pop_back();
-      a.insert(std::next(j), tmp);
+    // print
+    while (!a.empty()) {
+      cout << a.top() << " ";
+      a.pop();
     }
-    
-    ++minutes;
+    cout << "\n";
   }
   
   cout << minutes << "\n";
