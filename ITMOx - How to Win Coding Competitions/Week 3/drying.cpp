@@ -16,6 +16,7 @@ typedef long long ll;
 struct Dress {
   ll water;
   ll skip = 0;
+  ll on_radiator = 0;
   
   bool operator <(const Dress &other) const {
     return water < other.water;
@@ -47,6 +48,26 @@ int main() {
     Dress max2 = a.top();
     
     while (max1.water != 0 || max2.water != 0) {
+      // update max1
+      if (max1.water > minutes - max1.skip) {
+        max1.water -= (minutes - max1.skip);
+        max1.skip = minutes;
+      } else {
+        max1.water = 0;
+        max1.skip = minutes;
+      }
+      
+      if (max1.water == 14) {
+        cout << "DEBUG: " << minutes << " " << max2.water << " " << max2.skip << "\n";
+      }
+      
+      // update max2
+      if (max2.water > minutes - max2.skip) {
+        max2.water -= (minutes - max2.skip);
+      } else {
+        max2.water = 0;
+      }
+      
       cout << max1.water << " " << max2.water << "\n";
       
       // m = how many minutes max1 was on the radiator
@@ -58,6 +79,7 @@ int main() {
         m = 1;
       }
       
+      max1.on_radiator += m;
       minutes += m;
       
       // update max1 value, and put it back
@@ -72,23 +94,15 @@ int main() {
       
       // new max1
       max1 = a.top();
-      if (max1.water > minutes - max1.skip) {
-        max1.water -= (minutes - max1.skip);
-        max1.skip = minutes;
-      } else {
-        max1.water = 0;
-        max1.skip = minutes;
-      }
+      
       a.pop();
       
       // new max 2
       max2 = a.top();
-      if (max2.water > minutes - max2.skip) {
-        max2.water -= (minutes - max2.skip);
-      } else {
-        max2.water = 0;
-      }
     }
+    
+    // push the last popped element
+    a.push(max1);
     
     cout << "\nQueue:\n";
     while (!a.empty()) {
