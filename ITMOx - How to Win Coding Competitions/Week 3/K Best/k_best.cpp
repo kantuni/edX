@@ -20,7 +20,7 @@ struct Jewel {
   ull w;
   
   friend bool operator<(const Jewel &a, const Jewel &b) {
-    return (a.v * 1.0) / a.w > (b.v * 1.0) / b.w;
+    return (double) a.v / a.w > (double) b.v / b.w;
   }
 };
 
@@ -39,6 +39,7 @@ int main() {
   
   std::sort(begin(jewels), end(jewels));
   
+  cout << "\n";
   for (int i = 0; i < k; ++i) {
     cout << jewels[i].index + 1 << " ";
   }
