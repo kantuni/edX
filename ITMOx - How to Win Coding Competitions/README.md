@@ -30,4 +30,4 @@
 5. [Drying](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/Drying) - Time limit exceeded
 6. [Fence Painting](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/Fence%20Painting)
 7. [K Best](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/K%20Best)
-8. Scarecrow Sort
+8. [Scarecrow Sort](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%203/Scarecrow%20Sort) - **Accepted**
