@@ -28,9 +28,17 @@ int main() {
     return 0;
   }
   
+  // already checked ones
+  std::vector<bool> c(n, false);
+  
   for (int i = 0; i < n - k; ++i) {
+    if (c[i]) {
+      continue;
+    }
+    
     std::vector<ll> s;
     for (int j = i; j < n; j += k) {
+      c[j] = true;
       s.push_back(m[j]);
     }
     std::sort(begin(s), end(s));
