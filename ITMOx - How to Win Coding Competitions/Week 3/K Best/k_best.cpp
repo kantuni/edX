@@ -21,7 +21,7 @@ struct Jewel {
   ull w;
   
   friend bool operator<(const Jewel &a, const Jewel &b) {
-    return (double) a.v / a.w > (double) b.v / b.w;
+    return (double) a.v / a.w < (double) b.v / b.w;
   }
 };
 
@@ -32,42 +32,40 @@ int main() {
   ull V = 0;
   ull W = 0;
   
-  std::priority_queue<Jewel, std::vector<Jewel>> best;
-  std::vector<Jewel> jewels(n);
+  std::priority_queue<Jewel, std::vector<Jewel>> jewels;
   for (int i = 0; i < n; ++i) {
     Jewel j;
     cin >> j.v >> j.w;
     j.index = i + 1;
-    jewels[i] = j;
+    jewels.push(j);
   }
   
-  std::sort(begin(jewels), end(jewels));
-  
-  for (int i = 0; i < k; ++i) {
-    V += jewels[i].v;
-    W += jewels[i].w;
-    best.push(jewels[i]);
-  }
-  
-  for (int i = k; i < n; ++i) {
-    Jewel t = best.top();
-    ull newV = V - t.v + jewels[i].v;
-    ull newW = W - t.w + jewels[i].w;
+  std::vector<Jewel> best;
+  while (k > 0) {
+    V += jewels.top().v;
+    W += jewels.top().w;
+    best.push_back(jewels.top());
+    jewels.pop();
+    --k;
     
-    if ((double) newV / newW > (double) V / W) {
-      best.pop();
-      best.push(jewels[i]);
-      V = newV;
-      W = newW;
+    std::vector<Jewel> tmp;
+    while (!jewels.empty()) {
+      tmp.push_back(jewels.top());
+      jewels.pop();
+    }
+    
+    for (int i = 0; i < tmp.size(); ++i) {
+      tmp[i].v += V;
+      tmp[i].w += W;
+      jewels.push(tmp[i]);
     }
   }
-  
-  while (!best.empty()) {
-    cout << best.top().index << " ";
-    best.pop();
+
+  for (int i = 0; i < best.size(); ++i) {
+    cout << best[i].index << " ";
   }
   cout << "\n";
-  
+
   return 0;
 }
 
