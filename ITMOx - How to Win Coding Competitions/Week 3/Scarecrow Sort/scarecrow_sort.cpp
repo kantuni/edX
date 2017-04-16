@@ -8,30 +8,37 @@
   using std::cout;
 #endif
 
+#include <iterator>
+#include <vector>
+#include <algorithm>
+
 typedef long long ll;
 
 int main() {
   int n, k;
   cin >> n >> k;
   
-  ll *m = new ll[n];
+  std::vector<ll> m(n);
   for (int i = 0; i < n; ++i) {
     cin >> m[i];
   }
   
+  if (k == 1) {
+    cout << "YES\n";
+    return 0;
+  }
+  
   for (int i = 0; i < n - k; ++i) {
-    if (m[i] > m[i + k]) {
-      ll tmp = m[i];
-      m[i] = m[i + k];
-      m[i + k] = tmp;
-      
-      for (int j = i; j > 0; --j) {
-        if (m[j] < m[j - 1]) {
-          ll tmp = m[j];
-          m[j] = m[j - 1];
-          m[j - 1] = tmp;
-        }
-      }
+    std::vector<ll> s;
+    for (int j = i; j < n; j += k) {
+      s.push_back(m[j]);
+    }
+    std::sort(begin(s), end(s));
+    
+    int l = 0;
+    for (int j = i; j < n; j += k) {
+      m[j] = s[l];
+      ++l;
     }
   }
   
@@ -49,7 +56,6 @@ int main() {
     cout << "NO\n";
   }
   
-  delete[] m;
   return 0;
 }
 
