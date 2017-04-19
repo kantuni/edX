@@ -54,16 +54,8 @@ int main() {
       next = graph[v.top()][i];
       
       if (color[next] == 1) {
-        // make sure it's not the parent
-        int top = v.top();
-        v.pop();
-        int parent = v.top();
-        v.push(top);
-        
-        if (next != parent) {
-          cycle = true;
-          break;
-        }
+        cycle = true;
+        break;
       }
       
       if (color[next] == 0) {
@@ -81,19 +73,12 @@ int main() {
       color[v.top()] = 2;
       v.pop();
     }
-    
-    cout << "\n";
-    std::stack<int> copy = v;
-    while (!copy.empty()) {
-      cout << copy.top() + 1 << " ";
-      copy.pop();
-    }
-    cout << "\n";
   }
   
   if (cycle) {
     cout << "YES\n";
     
+    // print the cycle
     std::stack<int> c;
     int source = v.top();
     v.pop();
@@ -101,7 +86,6 @@ int main() {
       c.push(v.top());
       v.pop();
     }
-    
     c.push(source);
     while (!c.empty()) {
       cout << c.top() + 1 << " ";
@@ -114,4 +98,3 @@ int main() {
   
   return 0;  
 }
-
