@@ -15,22 +15,26 @@ int main() {
   int n, m;
   cin >> n >> m;
   
+  // no edges - no cycles
   if (m == 0) {
     cout << "NO\n";
     return 0;
   }
   
-  std::vector<std::vector<int>> graph(n);
-  // 0: white, 1: grey, 2: black
+  std::vector<std::vector<int>> G(n);
   std::vector<int> color(n, 0);
   
   std::stack<int> v;
-  int start = -1;
   bool cycle = false;
+  int start = -1;
   
   for (int i = 0; i < m; ++i) {
     int s, t;
     cin >> s >> t;
+    
+    if (start == -1) {
+      start = s - 1;
+    }
     
     if (s == t) {
       // loop
@@ -39,11 +43,7 @@ int main() {
       v.push(t - 1);
     }
     
-    if (start == -1) {
-      start = s - 1;
-    }
-    
-    graph[s - 1].push_back(t - 1);
+    G[s - 1].push_back(t - 1);
   }
  
   if (!cycle) {
@@ -52,29 +52,27 @@ int main() {
   }
   
   while (!v.empty() && !cycle) {
-    int next;
-    bool has_next = false;
+    bool has_adj = false;
+    int adj;
     
-    for (int i = 0; i < graph[v.top()].size(); ++i) {
-      next = graph[v.top()][i];
+    for (int i = 0; i < G[v.top()].size(); ++i) {
+      adj = G[v.top()][i];
       
-      if (color[next] == 1) {
+      if (color[adj] == 1) {
         cycle = true;
         break;
       }
       
-      if (color[next] == 0) {
-        has_next = true;
+      if (color[adj] == 0) {
+        has_adj = true;
         break;
       }
     }
 
-    if (has_next || cycle) {
-      // grey
-      v.push(next);
-      color[next] = 1;
+    if (has_adj || cycle) {
+      v.push(adj);
+      color[adj] = 1;
     } else {
-      // black
       color[v.top()] = 2;
       v.pop();
     }
@@ -92,6 +90,7 @@ int main() {
       v.pop();
     }
     c.push(source);
+    
     while (!c.empty()) {
       cout << c.top() + 1 << " ";
       c.pop();
@@ -103,3 +102,4 @@ int main() {
   
   return 0;  
 }
+
