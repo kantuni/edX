@@ -23,9 +23,12 @@ void dfs(vii G, int index, int parent) {
   for (int i = 0; i < G[index].size(); ++i) {
     int adj = G[index][i];
     if (adj != parent) {
+      // BTDT: in this order
       if (color[adj] == 0) {
         dfs(G, adj, index);
-      } else if (color[adj] == 1) {
+      }
+      
+      if (color[adj] == 1) {
         return;
       }
     }
@@ -36,6 +39,12 @@ void dfs(vii G, int index, int parent) {
 int main() {
   int n, m;
   cin >> n >> m;
+  
+  // no edges - no cycles
+  if (m == 0) {
+    cout << "YES\n";
+    return 0;
+  }
   
   vii G(n);
   color.resize(n, 0);
