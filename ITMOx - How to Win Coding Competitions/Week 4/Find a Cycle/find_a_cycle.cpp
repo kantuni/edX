@@ -15,6 +15,11 @@ int main() {
   int n, m;
   cin >> n >> m;
   
+  if (m == 0) {
+    cout << "NO\n";
+    return 0;
+  }
+  
   std::vector<std::vector<int>> graph(n);
   // 0: white, 1: grey, 2: black
   std::vector<int> color(n, 0);
