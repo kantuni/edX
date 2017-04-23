@@ -14,83 +14,85 @@
 int main() {
   int n, m;
   cin >> n >> m;
-  
+
   // no edges - no cycles
   if (m == 0) {
     cout << "NO\n";
     return 0;
   }
-  
+
   std::vector<std::vector<int>> G(n);
   std::vector<int> color(n, 0);
-  
-  std::stack<int> v;
+
+  std::stack<int> u;
   bool cycle = false;
   int start = -1;
-  
+
   for (int i = 0; i < m; ++i) {
     int s, t;
     cin >> s >> t;
-    
+
     if (start == -1) {
       start = s - 1;
     }
-    
+
     if (s == t) {
       // loop
       cycle = true;
-      v.push(s - 1);
-      v.push(t - 1);
+      u.push(s - 1);
+      u.push(t - 1);
     }
-    
+
     G[s - 1].push_back(t - 1);
   }
- 
-  if (!cycle) {
-    v.push(start);
+
+  if (!cycle) {    
+    // start DFS
+    u.push(start);
     color[start] = 1;
   }
-  
-  while (!v.empty() && !cycle) {
+
+  // DFS using stack
+  while (!u.empty() && !cycle) {
     bool has_adj = false;
     int adj;
     
-    for (int i = 0; i < G[v.top()].size(); ++i) {
-      adj = G[v.top()][i];
-      
-      if (color[adj] == 1) {
-        cycle = true;
-        break;
-      }
-      
+    for (int i = 0; i < G[u.top()].size(); ++i) {
+      adj = G[u.top()][i];
+
       if (color[adj] == 0) {
         has_adj = true;
+        break;
+      }
+
+      if (color[adj] == 1) {
+        cycle = true;
         break;
       }
     }
 
     if (has_adj || cycle) {
-      v.push(adj);
+      u.push(adj);
       color[adj] = 1;
     } else {
-      color[v.top()] = 2;
-      v.pop();
+      color[u.top()] = 2;
+      u.pop();
     }
   }
-  
+
   if (cycle) {
     cout << "YES\n";
-    
-    // print the cycle
+
+    // print the cycle in reverse order
     std::stack<int> c;
-    int source = v.top();
-    v.pop();
-    while (v.top() != source) {
-      c.push(v.top());
-      v.pop();
+    int source = u.top();
+    u.pop();
+    while (u.top() != source) {
+      c.push(u.top());
+      u.pop();
     }
     c.push(source);
-    
+
     while (!c.empty()) {
       cout << c.top() + 1 << " ";
       c.pop();
@@ -99,7 +101,7 @@ int main() {
   } else {
     cout << "NO\n";
   }
-  
-  return 0;  
+
+  return 0;
 }
 
