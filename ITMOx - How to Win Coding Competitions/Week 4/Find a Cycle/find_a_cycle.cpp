@@ -11,6 +11,9 @@
 #include <vector>
 #include <stack>
 
+typedef std::vector<int> vi;
+typedef std::vector<vi> vvi;
+
 int main() {
   int n, m;
   cin >> n >> m;
@@ -21,21 +24,18 @@ int main() {
     return 0;
   }
 
-  std::vector<std::vector<int>> G(n);
-  std::vector<int> color(n, 0);
+  vvi G(n);
+  vi color(n, 0);
 
   std::stack<int> u;
   bool cycle = false;
   int start = -1;
+  int seen = 0;
 
   for (int i = 0; i < m; ++i) {
     int s, t;
     cin >> s >> t;
-
-    if (start == -1) {
-      start = s - 1;
-    }
-
+    
     if (s == t) {
       // loop
       cycle = true;
@@ -43,17 +43,40 @@ int main() {
       u.push(t - 1);
     }
 
+    if (start == -1) {
+      start = s - 1;
+    }
+
     G[s - 1].push_back(t - 1);
   }
 
-  if (!cycle) {    
+  if (!cycle) {
     // start DFS
     u.push(start);
     color[start] = 1;
+    ++seen;
   }
 
   // DFS using stack
-  while (!u.empty() && !cycle) {
+  while (seen <= n && !cycle) {
+    if (u.empty()) {
+      bool done = true;
+      for (int i = 0; i < n; ++i) {
+        if (color[i] == 0) {
+          done = false;
+          u.push(i);
+          color[i] = 1;
+          ++seen;
+          break;
+        }
+      }
+      
+      // all vertices have been visited
+      if (done) {
+        break;
+      }
+    }
+    
     bool has_adj = false;
     int adj;
     
@@ -63,9 +86,7 @@ int main() {
       if (color[adj] == 0) {
         has_adj = true;
         break;
-      }
-
-      if (color[adj] == 1) {
+      } else if (color[adj] == 1) {
         cycle = true;
         break;
       }
@@ -74,6 +95,7 @@ int main() {
     if (has_adj || cycle) {
       u.push(adj);
       color[adj] = 1;
+      ++seen;
     } else {
       color[u.top()] = 2;
       u.pop();
