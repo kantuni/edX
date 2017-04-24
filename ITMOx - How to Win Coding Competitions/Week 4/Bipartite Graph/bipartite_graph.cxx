@@ -13,79 +13,83 @@
 #include <algorithm>
 
 typedef std::vector<int> vi;
-typedef std::vector<std::vector<int>> vii;
+typedef std::vector<vi> vvi;
 
-bool odd_cycle = false;
+// 0: white, 1: red, 2: blue
+vvi G;
 vi color;
 
-void dfs(vii G, int index, int parent) {
-  color[index] = 1;
+bool DFS(int index, int parent) {
+  if (color[parent] == 1 || parent == -1) {
+    color[index] = 2;
+  } else {
+    color[index] = 1;
+  }
+
   for (int i = 0; i < G[index].size(); ++i) {
     int adj = G[index][i];
-    if (adj != parent) {
-      // BTDT: in this order
-      if (color[adj] == 0) {
-        dfs(G, adj, index);
-      }
-      
-      if (color[adj] == 1) {
-        return;
+
+    if (color[adj] == color[index]) {
+      return false;
+    }
+    
+    if (color[adj] == 0) {
+      bool barpartite = DFS(adj, index);
+      if (!barpartite) {
+        return false;
       }
     }
   }
-  color[index] = 2;
+  return true;
 }
 
 int main() {
   int n, m;
   cin >> n >> m;
-  
+
   // no edges - no cycles
   if (m == 0) {
     cout << "YES\n";
     return 0;
   }
-  
-  vii G(n);
+
+  G.resize(n);
   color.resize(n, 0);
-  int start = -1;
-  
+  bool loop = false;
+
   for (int i = 0; i < m; ++i) {
     int s, t;
     cin >> s >> t;
-    
-    if (start == -1) {
-      start = s - 1;
-    }
-    
+
     if (s == t) {
-      odd_cycle = true;
+      loop = true;
     }
-    
+
     G[s - 1].push_back(t - 1);
     G[t - 1].push_back(s - 1);
   }
-  
-  if (odd_cycle) {
+
+  if (loop) {
     cout << "NO\n";
     return 0;
   }
-
-  dfs(G, start, -1);
-
-  int ones = 0;
-  for (int i = 0; i < color.size(); ++i) {
-    if (color[i] == 1) {
-      ones += color[i];
+  
+  bool bipartite = true;
+  for (int i = 0; i < n; ++i) {
+    if (color[i] == 0) {
+      bipartite = DFS(i, -1);
+      if (!bipartite) {
+        break;
+      }
     }
   }
-  
-  if (ones % 2 == 0) {
+
+  if (bipartite) {
     cout << "YES\n";
   } else {
     cout << "NO\n";
   }
-  
+
   return 0;
 }
 
