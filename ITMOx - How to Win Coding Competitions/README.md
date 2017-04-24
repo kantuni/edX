@@ -34,4 +34,4 @@
 
 ### Week 4
 1. [Find a Cycle](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Find%20a%20Cycle) - **Accepted**
-2. [Bipartite Graph](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Bipartite%20Graph) - Wrong answer
+2. [Bipartite Graph](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Bipartite%20Graph) - **Accepted**
