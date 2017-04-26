@@ -57,6 +57,10 @@ int main() {
     Edge min = q.top();
     q.pop();
     
+    if (color[min.target] == 1) {
+      continue;
+    }
+    
     if (dist[min.source] + min.weight < dist[min.target]) {
       dist[min.target] = dist[min.source] + min.weight;
     }
