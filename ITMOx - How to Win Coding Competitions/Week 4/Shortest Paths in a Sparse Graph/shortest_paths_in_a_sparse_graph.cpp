@@ -14,6 +14,8 @@
 typedef std::vector<std::pair<int, int>> vii;
 typedef std::vector<vii> vvii;
 
+std::vector<int> dist;
+
 struct Edge {
   int source;
   int target;
@@ -27,7 +29,7 @@ struct Edge {
   
   // invert operator trick
   friend bool operator<(const Edge& a, const Edge& b) {
-    return a.weight > b.weight;
+    return dist[a.source] + a.weight > dist[b.source] + b.weight;
   }
 };
 
@@ -44,7 +46,7 @@ int main() {
   }
   
   std::vector<int> color(n, 0);
-  std::vector<int> dist(n, 1000000);
+  dist.resize(n, 1000000);
   dist[0] = 0;
   
   std::priority_queue<Edge> q;
@@ -65,7 +67,7 @@ int main() {
         q.push(adj);
       }
     }
-    color[min.source] = 1;
+    color[min.target] = 1;
   }
   
   for (int i = 0; i < n; ++i) {
@@ -73,6 +75,6 @@ int main() {
   }
   cout << "\n";
 
-  return 0;  
+  return 0;
 }
 
