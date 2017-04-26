@@ -17,9 +17,7 @@ typedef std::vector<vii> vvii;
 std::vector<int> dist;
 
 struct Edge {
-  int source;
-  int target;
-  int weight;
+  int source, target, weight;
   
   Edge(int s, int t, int w) {
     this->source = s;
@@ -81,4 +79,3 @@ int main() {
 
   return 0;
 }
-
