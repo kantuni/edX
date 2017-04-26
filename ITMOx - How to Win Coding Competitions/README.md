@@ -4,7 +4,7 @@
 
 ### Week 1
 1. [A + B](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/A%2BB) - **Accepted**
-2. [A + B^2](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/A%20%2B%20B2) - **Accepted**
+2. [A + B<sup>2</sup>](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/A%20%2B%20B2) - **Accepted**
 3. [Prepare Yourself to Competitions!](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/Prepare%20Yourself%20to%20Competitions) - **Accepted**
 4. [Create a Team!](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/Create%20a%20Team) - **Accepted**
 5. [Put the Chairs the Right Way!](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/Put%20the%20Chairs%20the%20Right%20Way) - **Accepted**
