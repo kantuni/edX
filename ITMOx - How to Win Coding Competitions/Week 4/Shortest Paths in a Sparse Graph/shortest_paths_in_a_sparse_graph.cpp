@@ -9,9 +9,27 @@
 #endif
 
 #include <vector>
+#include <queue>
 
 typedef std::vector<std::pair<int, int>> vii;
 typedef std::vector<vii> vvii;
+
+struct Edge {
+  int source;
+  int target;
+  int weight;
+  
+  Edge(int s, int t, int w) {
+    this->source = s;
+    this->target = t;
+    this->weight = w;
+  }
+  
+  // invert operator trick
+  friend bool operator<(const Edge& a, const Edge& b) {
+    return a.weight > b.weight;
+  }
+};
 
 int main() {
   int n, m;
@@ -25,15 +43,36 @@ int main() {
     G[t - 1].push_back({s - 1, w});
   }
   
-  // print the graph
-  for (int i = 0; i < G.size(); ++i) {
-    cout << i + 1 << ": ";
-    for (int j = 0; j < G[i].size(); ++j) {
-      printf("(%d, %d) ", G[i][j].first + 1, G[i][j].second);
+  std::vector<int> color(n, 0);
+  std::vector<int> dist(n, 1000000);
+  dist[0] = 0;
+  
+  std::priority_queue<Edge> q;
+  Edge start(0, 0, 0);
+  q.push(start);
+  
+  while (!q.empty()) {
+    Edge min = q.top();
+    q.pop();
+    
+    if (dist[min.source] + min.weight < dist[min.target]) {
+      dist[min.target] = dist[min.source] + min.weight;
     }
-    cout << "\n";
+    
+    for (int i = 0; i < G[min.target].size(); ++i) {
+      if (color[G[min.target][i].first] != 1) {
+        Edge adj(min.target, G[min.target][i].first, G[min.target][i].second);
+        q.push(adj);
+      }
+    }
+    color[min.source] = 1;
   }
   
+  for (int i = 0; i < n; ++i) {
+    cout << dist[i] << " ";
+  }
+  cout << "\n";
+
   return 0;  
 }
 
