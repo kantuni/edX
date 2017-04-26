@@ -19,7 +19,6 @@ int main() {
   
   vvii G(n);
   for (int i = 0; i < m; ++i) {
-    // loop
     int s, t, w;
     cin >> s >> t >> w;
     G[s - 1].push_back({t - 1, w});
