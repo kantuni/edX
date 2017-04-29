@@ -54,7 +54,6 @@ int main() {
   cin >> a >> b;
   
   // remove edges with weights > a and < b
-  /*
   for (int i = 0; i < G.size(); ++i) {
     for (int j = 0; j < G[i].size(); ++j) {
       if (G[i][j].second > a && G[i][j].second < b) {
@@ -62,7 +61,6 @@ int main() {
       }
     }
   }
-  */
   
   std::vector<int> color(n, 0);
   dist.resize(n, 10000000000);
@@ -101,4 +99,3 @@ int main() {
 
   return 0;
 }
-
