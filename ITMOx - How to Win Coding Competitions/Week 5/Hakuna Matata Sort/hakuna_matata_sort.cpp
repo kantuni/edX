@@ -26,21 +26,21 @@ int main() {
     index[m[i]] = i;
   }
   
+  // save moves
   std::vector<std::pair<int, int>> swaps;
   
   for (int i = m.size() - 1; i > 0; --i) {
     for (int j = m[i]; j <= i; ++j) {
-      // swap
       int k = index[j + 1];
       int itemp = index[j];
-      
-      swaps.push_back({itemp, k});
       
       m[index[j]] = m[k];
       index[j] = k;
 
       index[m[k]] = itemp;
       m[k] = j;
+      
+      swaps.push_back({itemp, k});
     }
   }
   
@@ -51,4 +51,3 @@ int main() {
   
   return 0;
 }
-
