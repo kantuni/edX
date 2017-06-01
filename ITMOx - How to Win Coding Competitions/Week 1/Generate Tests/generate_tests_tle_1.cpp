@@ -16,7 +16,6 @@ typedef unsigned long long ull;
 
 ull number_of_divisors(ull n) {
   ull counter = 0;
-  
   // min(x, n / x) <= sqrt(n)
   for (ull i = 1; i <= sqrt(n); ++i) {
     if (n % i == 0) {
@@ -28,7 +27,6 @@ ull number_of_divisors(ull n) {
       }
     }
   }
-  
   return counter;
 }
 
@@ -58,10 +56,8 @@ int main() {
   
   ull max = 0;
   ull max_index = 0;
-  
   for (ull i = 2; i < k + 1; ++i) {
     ull counter;
-    
     if (primes[i]) {
       counter = 2;
     } else {
@@ -72,7 +68,6 @@ int main() {
       max = counter;
       max_index = i;
     }
-    
     divisors[i] = counter;
   }
   
