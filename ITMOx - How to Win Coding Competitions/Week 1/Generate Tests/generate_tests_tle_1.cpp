@@ -54,8 +54,7 @@ int main() {
   divisors[0] = 0;
   divisors[1] = 1;
   
-  ull max = 0;
-  ull max_index = 0;
+  ull max = 0, max_index = 0;
   for (ull i = 2; i < k + 1; ++i) {
     ull counter;
     if (primes[i]) {
