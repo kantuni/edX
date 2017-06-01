@@ -13,7 +13,6 @@
 
 int main() {
   int t[3][3];
-  
   for (int i = 0; i < 3; ++i) {
     for (int j = 0; j < 3; ++j) {
       cin >> t[i][j];
@@ -39,6 +38,6 @@ int main() {
     }
   }
   
-  cout << std::setprecision(17) << maximum << '\n';
+  cout << std::setprecision(17) << maximum << "\n";
   return 0;
 }
