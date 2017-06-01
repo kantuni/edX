@@ -28,7 +28,6 @@ int main() {
   
   // save moves
   std::vector<std::pair<int, int>> swaps;
-  
   for (int i = m.size() - 1; i > 0; --i) {
     for (int j = m[i]; j <= i; ++j) {
       int k = index[j + 1];
@@ -47,7 +46,6 @@ int main() {
   cout << swaps.size() << "\n";
   for (int i = 0; i < swaps.size(); ++i) {
     cout << swaps[i].first + 1 << " " << swaps[i].second + 1 << "\n";
-  }
-  
+  } 
   return 0;
 }
