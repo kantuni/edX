@@ -1,8 +1,8 @@
-### OSX ###
+# OSX
 .DS_Store
 
-### GCC ###
+# C/C++
 *.out
 
-### JetBrains ###
+# IDE
 .idea/
