@@ -40,4 +40,6 @@
 2. [Traveling Incognito](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%205/Traveling%20Incognito) - **Wrong answer**
 8. [Hakuna Matata Sort](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%205/Hakuna%20Matata%20Sort) - **Accepted**
 
-Problems solved: `17`
+<br>
+
+Problems solved: **17**
