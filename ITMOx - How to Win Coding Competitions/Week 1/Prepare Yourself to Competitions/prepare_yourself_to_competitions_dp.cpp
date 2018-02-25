@@ -54,15 +54,15 @@ int main() {
   // - p[i] + c(i - 1) of theory
   // - t[i] + c(i - 1) of practice
   // - max(p[i], t[i]) + c(i - 1) of both
-  for (int i = 1; i < n + 1; ++i) {
+  for (int i = 1; i < n + 1; i++) {
     c[i][0] = -1000000;
     c[i][1] = p[i] + std::max(c[i - 1][1], c[i - 1][0]);
     c[i][2] = t[i] + std::max(c[i - 1][2], c[i - 1][0]);
     c[i][3] = std::max({
-                p[i] + c[i - 1][2],
-                t[i] + c[i - 1][1],
-                std::max(p[i], t[i]) + c[i - 1][3]
-              });
+      p[i] + c[i - 1][2],
+      t[i] + c[i - 1][1],
+      std::max(p[i], t[i]) + c[i - 1][3]
+    });
   }
   
   // maximum
