@@ -21,7 +21,7 @@ int main() {
   std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
   int max = 1;
   
-  for (int i = 0; i < n; ++i) {
+  for (int i = 0; i < n; i++) {
     int a;
     cin >> a;
     
