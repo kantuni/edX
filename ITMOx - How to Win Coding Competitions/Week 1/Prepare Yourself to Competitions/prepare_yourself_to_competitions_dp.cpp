@@ -17,18 +17,18 @@ int main() {
   
   int *p = new int[n + 1];
   p[0] = 0; // convenience
-  for (int i = 1; i < n + 1; ++i) {
+  for (int i = 1; i < n + 1; i++) {
     cin >> p[i];
   }
   
   int *t = new int[n + 1];
   t[0] = 0; // convenience
-  for (int i = 1; i < n + 1; ++i) {
+  for (int i = 1; i < n + 1; i++) {
     cin >> t[i];
   }
   
   int **c = new int*[n + 1];
-  for (int i = 0; i < n + 1; ++i) {
+  for (int i = 0; i < n + 1; i++) {
     c[i] = new int[n + 1];
   }
   
