@@ -42,4 +42,5 @@
 
 <br>
 
-Problems solved: **17**
+The course was taken in 2017.  
+Problems solved: **17**  
