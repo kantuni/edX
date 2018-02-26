@@ -16,20 +16,20 @@ int main() {
   cin >> n;
   
   std::vector<int> m(n);
-  for (int i = 0; i < n; ++i) {
+  for (int i = 0; i < n; i++) {
     cin >> m[i];
   }
   
   // value -> index map
   std::map<int, int> index;
-  for (int i = 0; i < n; ++i) {
+  for (int i = 0; i < n; i++) {
     index[m[i]] = i;
   }
   
   // save moves
   std::vector<std::pair<int, int>> swaps;
-  for (int i = m.size() - 1; i > 0; --i) {
-    for (int j = m[i]; j <= i; ++j) {
+  for (int i = m.size() - 1; i > 0; i--) {
+    for (int j = m[i]; j <= i; j++) {
       int k = index[j + 1];
       int itemp = index[j];
       
@@ -44,7 +44,7 @@ int main() {
   }
   
   cout << swaps.size() << "\n";
-  for (int i = 0; i < swaps.size(); ++i) {
+  for (int i = 0; i < swaps.size(); i++) {
     cout << swaps[i].first + 1 << " " << swaps[i].second + 1 << "\n";
   } 
   return 0;
