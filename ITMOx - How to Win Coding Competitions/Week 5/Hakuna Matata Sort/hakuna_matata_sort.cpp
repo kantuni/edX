@@ -32,13 +32,10 @@ int main() {
     for (int j = m[i]; j <= i; j++) {
       int k = index[j + 1];
       int itemp = index[j];
-      
       m[index[j]] = m[k];
       index[j] = k;
-
       index[m[k]] = itemp;
       m[k] = j;
-      
       swaps.push_back({itemp, k});
     }
   }
