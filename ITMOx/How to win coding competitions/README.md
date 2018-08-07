@@ -1,4 +1,4 @@
-# [How to Win Coding Competitions: Secrets of Champions](https://www.edx.org/course/how-win-coding-competitions-secrets-itmox-i2cpx-0) by ITMO University
+# [How to win coding competitions: secrets of champions](https://www.edx.org/course/how-win-coding-competitions-secrets-itmox-i2cpx-0) by ITMO University
 
 The course was taken in 2017.
 
