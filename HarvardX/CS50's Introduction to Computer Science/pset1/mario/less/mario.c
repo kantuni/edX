@@ -25,7 +25,7 @@ int main()
         {
             printf("#");
         }
-        // Print the new line.
+        // Move the cursor to the next line.
         printf("\n");
     }
     return 0;
