@@ -16,14 +16,12 @@ int main(int argc, string argv[])
         string c = p;
         for (int i = 0, len = strlen(p); i < len; i++)
         {
-            // the program must preserve case
-            if (islower(c[i]))
+            // apply transformation only to alphabetical characters
+            if (isalpha(c[i]))
             {
-                c[i] = 'a' + (p[i] - 'a' + k) % 26;
-            }
-            else if (isupper(c[i]))
-            {
-                c[i] = 'A' + (p[i] - 'A' + k) % 26;
+                // the program must preserve case
+                char start = isupper(c[i]) ? 'A' : 'a';
+                c[i] = start + (p[i] - start + k) % 26;
             }
         }
         // print ciphertext
