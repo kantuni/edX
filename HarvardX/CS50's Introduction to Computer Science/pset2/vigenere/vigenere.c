@@ -6,8 +6,7 @@
 int main(int argc, string argv[])
 {
     // There should be exactly 2 command line arguments
-    // (the program name and the key). Otherwise, print
-    // the error message and exit with code 1.
+    // (the program name and the key).
     if (argc == 2)
     {
         // Get the key.
@@ -42,10 +41,10 @@ int main(int argc, string argv[])
             // Apply transformation only to alphabetical characters.
             if (isalpha(c[i]))
             {
-                // Calculate alphabetical index (the "shift").
-                char start = isupper(c[i]) ? 'A' : 'a';
+                // Calculate the "shift".
                 int shift = k[j] - 'A';
                 // Encipher the character.
+                char start = isupper(c[i]) ? 'A' : 'a';
                 c[i] = start + (c[i] - start + shift) % 26;
                 j = (j + 1) % klen;
             }
@@ -53,6 +52,7 @@ int main(int argc, string argv[])
         // Print the ciphertext.
         printf("ciphertext: %s\n", c);
     }
+    // Otherwise, print the error message and exit with code 1.
     else
     {
         printf("Usage: ./vigenere k\n");
