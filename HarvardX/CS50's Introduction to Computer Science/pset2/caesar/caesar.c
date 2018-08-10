@@ -6,32 +6,33 @@
 
 int main(int argc, string argv[])
 {
+    // There should be exactly 2 command line arguments
+    // (the program name and the key).
     if (argc == 2)
     {
-        // get key from command line argument
+        // Get the key as an integer.
         int k = atoi(argv[1]);
-        // get plaintext
+        // Prompt the user for a plaintext.
         string p = get_string("plaintext: ");
-        // encipher
+        // Encipher the plaintext.
         string c = p;
         for (int i = 0, len = strlen(p); i < len; i++)
         {
-            // apply transformation only to alphabetical characters
+            // Apply transformation only to alphabetical characters.
             if (isalpha(c[i]))
             {
-                // the program must preserve case
+                // The program must preserve case.
                 char start = isupper(c[i]) ? 'A' : 'a';
                 c[i] = start + (p[i] - start + k) % 26;
             }
         }
-        // print ciphertext
+        // Print the ciphertext.
         printf("ciphertext: %s\n", c);
     }
+    // Otherwise, print the error message and exit with code 1.
     else
     {
-        // print error message
         printf("Usage: ./caesar k\n");
-        // exit with code 1
         return 1;
     }
     return 0;
