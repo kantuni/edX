@@ -18,7 +18,7 @@ int main(int argc, string argv[])
         string c = p;
         for (int i = 0, len = strlen(p); i < len; i++)
         {
-            // Apply transformation only to alphabetical characters.
+            // Encipher only alphabetical characters.
             if (isalpha(c[i]))
             {
                 // The program must preserve case.
