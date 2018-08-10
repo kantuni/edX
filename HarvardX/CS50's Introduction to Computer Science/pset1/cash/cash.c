@@ -26,6 +26,7 @@ int main()
     cents %= 5;
     // Calculate the number of pennies used.
     ans += cents;
+    // Print the answer.
     printf("%i\n", ans);
     return 0;
 }
