@@ -3,27 +3,29 @@
 
 int main()
 {
-    // prompt and validate user input
+    // Prompt and validate user input.
+    // The height of the half-pyramid should be a
+    // non-negative integer no greater than 23.
     int n;
     do
     {
         n = get_int("Height: ");
     }
     while (n < 0 || n > 23);
-    // draw the half-pyramid
+    // Draw the half-pyramid.
     for (int i = 0; i < n; i++)
     {
-        // print spaces
+        // Print spaces.
         for (int j = 0; j < n - i - 1; j++)
         {
             printf(" ");
         }
-        // print hashes
+        // Print hashes.
         for (int j = 0; j < i + 2; j++)
         {
             printf("#");
         }
-        // print new line
+        // Print the new line.
         printf("\n");
     }
     return 0;
