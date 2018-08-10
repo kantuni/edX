@@ -38,7 +38,7 @@ int main(int argc, string argv[])
         int clen = strlen(c);
         for (int i = 0, j = 0; i < clen; i++)
         {
-            // Apply transformation only to alphabetical characters.
+            // Encipher only alphabetical characters.
             if (isalpha(c[i]))
             {
                 // Calculate the "shift".
