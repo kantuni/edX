@@ -49,7 +49,7 @@ end
 # NOTE: be sure it works for both upper and lower case and for non-letters!
 def starts_with_consonant?(s)
   return false if s.empty?
-  return false if /^[[:alpha:]]/.match(s).nil?
+  return false unless s =~ /^[[:alpha:]]/
   /^[^aeiou]/i.match(s)
 end
 
