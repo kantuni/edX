@@ -35,9 +35,19 @@
 2. [Bipartite Graph](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Bipartite%20Graph) - **Accepted**
 3. [Shortest Paths and Their Friends](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Shortest%20Paths%20and%20Their%20Friends)
 4. [Shortest Paths in a Sparse Graph](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Shortest%20Paths%20in%20a%20Sparse%20Graph) - **Accepted**
+5. Shortest Path in a Dense Graph
+6. Harry Potter and the Railroad
+7. Football Broadcasting
+8. Hamiltonian Paths
 
 ### Week 5
+1. Bercity Underground
 2. [Traveling Incognito](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%205/Traveling%20Incognito) - **Wrong answer**
+3. Railway Yard
+4. Moscow 2042
+5. Expensive Trees
+6. Sherlocked
+7. Bytelandian Cars
 8. [Hakuna Matata Sort](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%205/Hakuna%20Matata%20Sort) - **Accepted**
 
 <br>
