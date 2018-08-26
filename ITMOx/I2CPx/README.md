@@ -31,10 +31,10 @@
 8. [Scarecrow Sort](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%203/Scarecrow%20Sort) - **Accepted**
 
 ### Week 4
-1. [Find a Cycle](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Find%20a%20Cycle) - **Accepted**
-2. [Bipartite Graph](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Bipartite%20Graph) - **Accepted**
-3. [Shortest Paths and Their Friends](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Shortest%20Paths%20and%20Their%20Friends)
-4. [Shortest Paths in a Sparse Graph](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%204/Shortest%20Paths%20in%20a%20Sparse%20Graph) - **Accepted**
+1. [Find a Cycle](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Find%20a%20Cycle) - **Accepted**
+2. [Bipartite Graph](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Bipartite%20Graph) - **Accepted**
+3. [Shortest Paths and Their Friends](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Shortest%20Paths%20and%20Their%20Friends)
+4. [Shortest Paths in a Sparse Graph](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Shortest%20Paths%20in%20a%20Sparse%20Graph) - **Accepted**
 
 ### Week 5
 2. [Traveling Incognito](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%205/Traveling%20Incognito) - **Wrong answer**
