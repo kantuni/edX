@@ -37,8 +37,8 @@
 4. [Shortest Paths in a Sparse Graph](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%204/Shortest%20Paths%20in%20a%20Sparse%20Graph) - **Accepted**
 
 ### Week 5
-2. [Traveling Incognito](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%205/Traveling%20Incognito) - **Wrong answer**
-8. [Hakuna Matata Sort](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%205/Hakuna%20Matata%20Sort) - **Accepted**
+2. [Traveling Incognito](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%205/Traveling%20Incognito) - **Wrong answer**
+8. [Hakuna Matata Sort](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%205/Hakuna%20Matata%20Sort) - **Accepted**
 
 <br>
 
