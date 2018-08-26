@@ -1,7 +1,7 @@
 # [How to win coding competitions: secrets of champions](https://www.edx.org/course/how-win-coding-competitions-secrets-itmox-i2cpx-0) by ITMO University
 
 ### Week 1
-1. [A + B](https://github.com/kantuni/edX/tree/master/ITMOx%20-%20How%20to%20Win%20Coding%20Competitions/Week%201/A%2BB) - **Accepted**
+1. [A + B](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%201/A%2BB) - **Accepted**
 2. [A + B<sup>2</sup>](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%201/A%20%2B%20B2) - **Accepted**
 3. [Prepare Yourself to Competitions!](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%201/Prepare%20Yourself%20to%20Competitions) - **Accepted**
 4. [Create a Team!](https://github.com/kantuni/edX/tree/master/ITMOx/I2CPx/Week%201/Create%20a%20Team) - **Accepted**
