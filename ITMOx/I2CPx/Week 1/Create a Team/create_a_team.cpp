@@ -13,31 +13,25 @@
 
 int main() {
   int t[3][3];
-  for (int i = 0; i < 3; ++i) {
-    for (int j = 0; j < 3; ++j) {
+  for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
       cin >> t[i][j];
     }
   }
-  
-  double maximum = 0;
-  for (int i = 0; i < 3; ++i) {
+  double ans = 0;
+  for (int i = 0; i < 3; i++) {
     int a = t[i][0];
-    for (int j = 0; j < 3; ++j) {
-      if (j != i) {
-        int b = t[j][1];
-        for (int k = 0; k < 3; ++k) {
-          if (k != i && k != j) {
-            int c = t[k][2];
-            double e = sqrt(a * a + b * b + c * c);
-            if (e > maximum) {
-              maximum = e;
-            }
-          }
-        }
+    for (int j = 0; j < 3; j++) {
+      if (j == i) continue;
+      int b = t[j][1];
+      for (int k = 0; k < 3; k++) {
+        if (k == i and k == j) continue;
+        int c = t[k][2];
+        double e = sqrt(a * a + b * b + c * c);
+        ans = max(ans, e);
       }
     }
   }
-  
-  cout << std::setprecision(17) << maximum << "\n";
+  cout << std::setprecision(17) << ans << "\n";
   return 0;
 }
