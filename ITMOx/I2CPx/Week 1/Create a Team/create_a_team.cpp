@@ -9,7 +9,9 @@
 #endif
 
 #include <cmath>
+#include <algorithm>
 #include <iomanip>
+using namespace std;
 
 int main() {
   int t[3][3];
@@ -25,13 +27,13 @@ int main() {
       if (j == i) continue;
       int b = t[j][1];
       for (int k = 0; k < 3; k++) {
-        if (k == i and k == j) continue;
+        if (k == i || k == j) continue;
         int c = t[k][2];
         double e = sqrt(a * a + b * b + c * c);
         ans = max(ans, e);
       }
     }
   }
-  cout << std::setprecision(17) << ans << "\n";
+  cout << setprecision(17) << ans << "\n";
   return 0;
 }
