@@ -1,8 +1,11 @@
-# macOS
-.DS_Store
-
-# C/C++
-*.out
+# TDD
+coverage
 
 # IDE
 .idea
+
+# Misc
+.DS_Store
+.ruby-version
+*.out
+*.swp
