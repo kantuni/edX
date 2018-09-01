@@ -1,0 +1,9 @@
+# TDD
+coverage
+
+# IDE
+.idea
+
+# Misc
+.ruby-version
+*.swp
