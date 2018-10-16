@@ -7,9 +7,6 @@ coverage
 # C/C++
 *.out
 
-# Ruby
-.ruby-version
-
 # macOS
 .DS_Store
 
