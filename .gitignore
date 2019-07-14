@@ -1,8 +1,5 @@
-# IDE
-.idea
+# macOS
+.DS_Store
 
 # C/C++
 *.out
-
-# macOS
-.DS_Store
